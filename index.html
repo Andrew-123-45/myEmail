@@ -1,21 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fomu ya Mawasiliano</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Wasiliana Nasi</h2>
-  <form action="email.php" method="POST">
-    <label>Jina:</label><br>
-    <input type="text" name="jina" required><br><br>
 
-    <label>Email:</label><br>
-    <input type="email" name="barua" required><br><br>
+  <div class="form-container">
+    <h2>Fomu ya Mawasiliano</h2>
+    <form action="https://formsubmit.co/andreatujabe4@gmail.com" method="POST" enctype="multipart/form-data">
+      
+      <!-- Hidden settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://thank-you-page.com">
 
-    <label>Ujumbe:</label><br>
-    <textarea name="ujumbe" rows="5" required></textarea><br><br>
+      <label>Jina Kamili:</label>
+      <input type="text" name="jina_kamili" placeholder="Ingiza jina lako" required>
 
-    <input type="submit" value="Tuma">
-  </form>
+      <label>Barua Pepe:</label>
+      <input type="email" name="barua_pepe" placeholder="mfano@example.com" required>
+
+      <label>Namba ya Simu:</label>
+      <input type="tel" name="namba_ya_simu" placeholder="+255..." required>
+
+      <label>Aina ya Huduma Unayohitaji:</label>
+      <select name="aina_ya_huduma" required>
+        <option value="">-- Chagua Huduma --</option>
+        <option value="Ushauri">Ushauri</option>
+        <option value="Huduma ya Tovuti">Huduma ya Tovuti</option>
+        <option value="Matengenezo ya Kompyuta">Matengenezo ya Kompyuta</option>
+        <option value="Huduma ya Simu">Huduma ya Simu</option>
+      </select>
+
+      <label>Tarehe Unayopendelea:</label>
+      <input type="date" name="tarehe" required>
+
+      <label>Pakia Faili (hiari):</label>
+      <input type="file" name="faili">
+
+      <label>Ujumbe Wako:</label>
+      <textarea name="ujumbe" rows="5" placeholder="Andika ujumbe wako hapa..." required></textarea>
+
+      <button type="submit">Tuma Taarifa</button>
+
+      <div class="note">
+        Taarifa zako zitatumwa kwa usalama kwenye email yetu.
+      </div>
+    </form>
+  </div>
+
 </body>
 </html>
